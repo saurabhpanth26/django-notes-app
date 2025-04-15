@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-app-notes-service
+  namespace: django-notes-app-ns 
+spec:
+  selector:
+    app: django-notes-app
+  ports:
+    - protocol: TCP
+      port: 8000       
+      targetPort: 8000  
+  type: ClusterIP
